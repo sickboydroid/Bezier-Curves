@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  color: var(--light);
+}
+
+:root {
+  --black: #141619;
+  --gray: #2c2e3a;
+  --light: #b3b4bd;
+  --accent: #0421c0;
+  --dark-accent: #050a44;
+}
+
+html,
+body {
+  background-color: var(--black);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: system-ui;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  width: 90%;
+  height: 90%;
+  & .curve-selector-container {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.canvas-container {
+  position: relative;
+  background-color: var(--gray);
+  border-radius: 15px;
+  width: 800px;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.curve-selection-item {
+  --border-radius: 15px;
+  background-color: var(--gray);
+  color: gray;
+  padding: 10px;
+  width: 15ch;
+  text-align: center;
+  cursor: pointer;
+  transition: all 250ms;
+  &:first-of-type {
+    border-radius: var(--border-radius) 0px 0px var(--border-radius);
+  }
+  &:last-of-type {
+    border-radius: 0px var(--border-radius) var(--border-radius) 0px;
+  }
+  &.selected {
+    color: white;
+    filter: brightness(2);
+  }
+
+  &.selected:hover {
+    filter: brightness(2.5);
+  }
+
+  &:hover {
+    filter: brightness(1.5);
+  }
+}
+
+.handle {
+  --size: 1.2rem;
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  background-color: var(--accent);
+  border-radius: calc(var(--size) / 2);
+  transition: outline 250ms ease-in-out;
+  &:hover,
+  &:focus {
+    outline: 4px solid var(--light);
+  }
+}
+
+.handle-dragging {
+  outline: 4px solid var(--light);
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  width: 70%;
+  & .about-me {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+
+    & > * {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      & > a {
+        text-decoration: none;
+      }
+      & > img {
+        width: 40px;
+      }
+    }
+  }
+}
