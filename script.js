@@ -145,7 +145,7 @@ window.onmousemove = event => {
 
 function onClickHandle(event) {}
 
-function random(min = 0, max) {
+function random(min, max) {
   return Math.floor((max - min) * Math.random() + min);
 }
 
