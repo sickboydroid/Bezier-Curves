@@ -77,7 +77,7 @@ const HANDLE_SIZE = 16 * 1.2;
 let stopUpdate = false;
 let isUpdateRunning = false;
 let controlPoints = [];
-addHandles(3);
+addHandles(4);
 function addHandles(count) {
   [...canvasContainer.children].forEach(child => {
     if (!child.isSameNode(canvas)) child.remove();
