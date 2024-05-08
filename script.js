@@ -164,8 +164,6 @@ function update() {
     while (curControlPoints.length !== 1) {
       const nextControlPoints = [];
       for (let i = 0; i < curControlPoints.length - 1; i++) {
-        // drawPoint(curControlPoints[i].vector);
-        // drawPoint(curControlPoints[i + 1].vector);
         const handleVector = lerp(curControlPoints[i], curControlPoints[i + 1], t);
         nextControlPoints.push(handleVector);
       }
