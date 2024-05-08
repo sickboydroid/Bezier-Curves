@@ -137,8 +137,8 @@ window.onmousemove = event => {
   const mouseY = event.clientY - CANVAS_Y;
   for (const handle of controlPoints) {
     if (handle.dragging) {
-      handle.x = clamp(0, mouseX - HANDLE_SIZE, CANVAS_WIDTH - HANDLE_SIZE);
-      handle.y = clamp(0, mouseY - HANDLE_SIZE, CANVAS_HEIGHT - HANDLE_SIZE);
+      handle.x = clamp(0, mouseX, CANVAS_WIDTH);
+      handle.y = clamp(0, mouseY, CANVAS_HEIGHT);
     }
   }
 };
